@@ -2700,7 +2700,6 @@ in modules // {
       werkzeug
       itsdangerous
       dateutil
-      futures
       requests2
       six
       pygments
@@ -2713,7 +2712,8 @@ in modules // {
       ]
       ++ optionals ( isPy26 ) [ argparse ]
       ++ optionals ( !isPy3k && !isPyPy ) [ websocket_client ]
-      ++ optionals ( !isPyPy ) [ numpy pandas greenlet ];
+      ++ optionals ( !isPyPy ) [ numpy pandas greenlet ]
+      ++ optionals ( !isPy3k ) [ futures ]; # futures is disabled for Py3k
 
     checkPhase = ''
       ${python.interpreter} -m unittest discover -s bokeh/tests
