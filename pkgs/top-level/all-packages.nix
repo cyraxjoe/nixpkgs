@@ -9499,6 +9499,8 @@ in
 
   t1lib = callPackage ../development/libraries/t1lib { };
 
+  ta-lib = callPackage ../development/libraries/ta-lib { };
+
   taglib = callPackage ../development/libraries/taglib { };
   taglib_1_9 = callPackage ../development/libraries/taglib/1.9.nix { };
 
