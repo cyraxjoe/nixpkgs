@@ -22026,6 +22026,31 @@ in modules // {
     };
   };
 
+  TA-Lib = buildPythonPackage rec {
+    name = "TA-Lib-${version}";
+
+    version = "0.4.10";
+
+    disabled = isPyPy;
+
+    doCheck = false;
+
+    src = pkgs.fetchurl {
+      url = "mirror://pypi/T/TA-Lib/${name}.tar.gz";
+      sha256 = "0a7mkxcy3qf3w1wbi6gaarpa3zvqy7s73xais9iia2fk17dxwdqi";
+    };
+
+    buildInputs = [ pkgs.ta-lib ];
+    propagatedBuildInputs = with self; [ numpy cython ];
+
+    meta = {
+      description = "Python wrapper for TA-Lib";
+      homepage = "http://github.com/mrjbq7/ta-lib";
+      license = licenses.bsdOriginal;
+      maintainers = with maintainers; [ cyraxjoe ];
+    };
+  };
+
   Theano = buildPythonPackage rec {
     name = "Theano-0.8.1";
 
