@@ -1,0 +1,14 @@
+diff --git a/Makefile b/Makefile
+index c7260ac..8f282c3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -462,6 +462,9 @@ all: modules
+ modules:
+ 	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  modules
+ 
++install:
++	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
++
+ installfw:
+ 	mkdir -p /lib/firmware/rtlwifi
+ 	cp -n firmware/* /lib/firmware/rtlwifi/.

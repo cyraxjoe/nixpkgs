@@ -13449,6 +13449,8 @@ with pkgs;
 
     rtl8814au = callPackage ../os-specific/linux/rtl8814au { };
 
+    rtl8822bu = callPackage ../os-specific/linux/rtl8822bu { };
+
     rtlwifi_new = callPackage ../os-specific/linux/rtlwifi_new { };
 
     openafs = callPackage ../servers/openafs/module.nix { };
@@ -13854,6 +13856,8 @@ with pkgs;
   rtl8723bs-firmware = callPackage ../os-specific/linux/firmware/rtl8723bs-firmware { };
 
   rtlwifi_new-firmware = callPackage ../os-specific/linux/firmware/rtlwifi_new-firmware { };
+
+  rtl8822bu-firmware = callPackage ../os-specific/linux/firmware/rtl8822bu-firmware { };
 
   s3ql = callPackage ../tools/backup/s3ql { };
 
